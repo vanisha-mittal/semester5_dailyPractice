@@ -1,0 +1,5 @@
+-- Last updated: 7/31/2025, 5:22:12 PM
+# Write your MySQL query statement below
+SELECT email FROM Person
+GROUP BY email
+HAVING COUNT(email) > 1;
