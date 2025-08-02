@@ -1,0 +1,14 @@
+# Last updated: 8/2/2025, 4:04:04 PM
+class Solution(object):
+    def merge(self, nums1, m, nums2, n):
+        for i in range(n):
+          nums1[m+i] = nums2[i]
+        nums1.sort()
+        """
+        :type nums1: List[int]
+        :type m: int
+        :type nums2: List[int]
+        :type n: int
+        :rtype: None Do not return anything, modify nums1 in-place instead.
+        """
+        
