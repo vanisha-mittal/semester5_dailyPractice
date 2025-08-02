@@ -1,0 +1,19 @@
+# Last updated: 8/2/2025, 4:05:47 PM
+class Solution:
+    def reverse(self, x: int) -> int:
+        sign = -1 if x < 0 else 1
+        x *= sign
+
+        res = 0
+        while x:
+            res = res * 10 + x % 10
+            x //= 10
+
+        res *= sign
+
+        if res > 2 ** 31 - 1 or res < -2 ** 31:
+            return 0
+
+        return res
+        
+        
