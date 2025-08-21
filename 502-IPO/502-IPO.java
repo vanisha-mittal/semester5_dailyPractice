@@ -1,4 +1,4 @@
-// Last updated: 8/21/2025, 11:47:52 AM
+// Last updated: 8/21/2025, 11:49:18 AM
 class Solution {
     public int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {
         int[][] arr=new int[profits.length][2];
@@ -15,7 +15,7 @@ class Solution {
                 i++;
             }
             if(pq.isEmpty()){
-                break;
+                return w;
             }
             w+=pq.poll()[1];
             k--;
