@@ -1,4 +1,4 @@
-// Last updated: 8/29/2025, 9:04:13 PM
+// Last updated: 8/29/2025, 9:04:20 PM
 public class Solution {
     public int minSteps(String s, String t) {
         int[] c1 = new int[26];
