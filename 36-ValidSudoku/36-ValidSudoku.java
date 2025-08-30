@@ -1,4 +1,4 @@
-// Last updated: 8/2/2025, 4:05:03 PM
+// Last updated: 8/30/2025, 10:55:11 PM
 class Solution {
     public boolean isValidSudoku(char[][] board) {
         for(int i=0;i<9;i++){
