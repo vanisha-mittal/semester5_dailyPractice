@@ -1,4 +1,4 @@
-// Last updated: 9/3/2025, 12:32:43 PM
+// Last updated: 9/3/2025, 12:34:22 PM
 class Solution {
     public int lengthOfLIS(int[] arr) {
         int[] dp=new int[arr.length];
@@ -11,10 +11,6 @@ class Solution {
                 }
             }
         }
-        int ans=dp[0];
-        for(int i=1;i<dp.length;i++){
-            ans=Math.max(ans,dp[i]);
-        }
-        return ans;
+        return Arrays.stream(dp).max().getAsInt();
     }
 }
