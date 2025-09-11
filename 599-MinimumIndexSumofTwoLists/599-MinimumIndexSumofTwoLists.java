@@ -1,30 +1,29 @@
-// Last updated: 9/11/2025, 10:27:06 PM
+// Last updated: 9/11/2025, 10:28:16 PM
 class Solution {
     public String[] findRestaurant(String[] list1, String[] list2) {
-        Map<String, Integer> map = new HashMap(list1.length);
-        List<String> rez = new ArrayList(list1.length);
-        int min = Integer.MAX_VALUE;
-
-        for (int i = 0; i < list1.length; i++) {
-            map.put(list1[i], i);
+        if(list1.length>list2.length){
+            return findRestaurant(list2,list1);
         }
-
-        for (int i = 0; i < list2.length && i <= min; i++) {
-            String key = list2[i];
-
-            if (map.containsKey(key)) {
-                int value = map.get(key) + i;
-                
-                if (value < min) {
-                    min = value;
-                    rez.clear();
-                    rez.add(key);
-                } else if (value == min) {
-                    rez.add(key);
+        Map<String,Integer>map=new HashMap<>();
+        for(int i=0;i<list1.length;i++){
+            map.put(list1[i],i);
+        }
+        ArrayList<String>list=new ArrayList<>();
+        int temp=0;
+        int min=Integer.MAX_VALUE;
+        for(int i=0;i<list2.length;i++){
+            if(i>min)break;
+            if(map.containsKey(list2[i])){
+                int ind=i+map.get(list2[i]);
+                if(ind<min){
+                    list.clear();
+                    list.add(list2[i]);
+                }else if(ind==min){
+                    list.add(list2[i]);
                 }
+                min=Math.min(min,ind);
             }
-        }
-
-        return rez.toArray(new String[0]);
+        }return list.toArray(new String[0]);
+        
     }
 }
